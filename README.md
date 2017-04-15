@@ -29,5 +29,15 @@
 7. 继续伪造referer进行历年成绩post请求
 8. 将历年成绩的数据进行加工处理，得出所有成绩，不及格成绩，最新成绩等等信息
 
+### 开发工具
+1. PyCharm Community Edition 2016.2.3              IDE
+2. Telerik Fiddler Web Debugger v4.6.20171.14978   抓包工具
+3. pyinstaller                                     打包exe
+4. python 3.5.2                                    python 
+ 
+### 写在最后
+欢迎各位小伙伴对源码进行学习研究与扩展，有需要改进的地方可以提交issue或branch。
+掌握了网络编程的要领后，就可以举一反三，略加修改后即可用于其他学校的教务系统或者网站
+
 create time 2017-4-15  
 项目地址：https://github.com/ansionfor/python-query-edu-system
