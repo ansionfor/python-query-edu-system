@@ -4,7 +4,6 @@
 	# created by ansion
 	# qq 77931774
 	# creating time 2017年4月11日
-  	# python3.5
 
 import requests
 from random import choice
@@ -25,6 +24,7 @@ print(
     **************************************
     """
 )
+print('正在加载中...')
 
 def user_agents():
     user_agents = [
@@ -78,12 +78,13 @@ def postLogin(name='',password=''):
     if name == '':
         username = input('请输入学号:')
     if password == '':
-        pwd = input('请输入密码:')
+        pwd = getpass.getpass('请输入密码(密码不显示):')
     #自动打开灰度处理的验证码
     im = Image.open('code.jpg')
     im = im.resize((150,60))
     RGB = im.convert('L')
     RGB.show()
+    RGB.close
     code = input('请输入验证码:')
 
     data = {
@@ -107,9 +108,11 @@ def postLogin(name='',password=''):
         elif re.search("密码错误",result.text):
             print('密码错误')
             postLogin(username)
-        else:
+        elif re.search("用户名不存在",result.text):
             print('学号错误')
             postLogin('',pwd)
+        else:
+            postLogin(username,pwd)
     elif result.status_code == 302:
         return
 
