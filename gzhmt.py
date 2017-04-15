@@ -84,7 +84,7 @@ def postLogin(name='',password=''):
     im = im.resize((150,60))
     RGB = im.convert('L')
     RGB.show()
-    RGB.close
+
     code = input('请输入验证码:')
 
     data = {
